@@ -3,7 +3,7 @@
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class ABC100
+ * Class SampleTest
  */
 class SampleTest extends TestCase
 {
