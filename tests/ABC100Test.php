@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Class ABC100
  */
-class ABC100 extends TestCase
+class ABC100Test extends TestCase
 {
     /**
      * @group 100A
