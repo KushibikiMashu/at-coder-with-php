@@ -8,20 +8,6 @@ use PHPUnit\Framework\TestCase;
 class ABC100 extends TestCase
 {
     /**
-     * @group 100B
-     * @dataProvider DataA
-     *
-     * @param $expected
-     * @param $a
-     * @param $b
-     */
-    public function testB($expected, $a, $b)
-    {
-        $result = $this->solveA($a, $b);
-        $this->assertSame($expected, $result);
-    }
-
-    /**
      * @group 100A
      * @dataProvider DataA
      *
@@ -55,5 +41,39 @@ class ABC100 extends TestCase
     private function solveA($a, $b)
     {
         return strlen($a . $b);
+    }
+
+    /**
+     * @group 100B
+     * @dataProvider DataB
+     *
+     * @param $expected
+     * @param $a
+     * @param $b
+     */
+    public function testB($expected, $a, $b)
+    {
+        $result = $this->solveB($a, $b);
+        $this->assertSame($expected, $result);
+    }
+
+    /**
+     * @return Generator
+     */
+    public function DataB()
+    {
+        yield "1" => [14, "at", "coder"];
+    }
+
+    /**
+     * 提出するロジック
+     *
+     * @param $a
+     * @param $b
+     * @return int
+     */
+    private function solveB($a, $b)
+    {
+        return strlen($a . $b) * 2;
     }
 }
