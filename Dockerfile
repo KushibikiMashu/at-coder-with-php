@@ -25,8 +25,10 @@ COPY config/docker-php-ext-xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-x
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
 COPY composer.json /home/composer.json
+COPY src /home/src
 WORKDIR /home
-RUN composer install
+RUN composer install && \
+  composer dumpautoload
 
 ENTRYPOINT ["vendor/bin/phpunit", "tests"]
 CMD [""]

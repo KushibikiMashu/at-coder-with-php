@@ -1,11 +1,11 @@
 {
-    "name": "KushibikiMashu/at-coder-with-php",
+    "name": "kushibikimashu/at-coder-with-php",
     "require-dev": {
         "phpunit/phpunit": "^6"
     },
     "autoload": {
-        "classmap": [
-            "src/"
-        ]
+        "psr-4": {
+            "AtCoder\\": "src/"
+        }
     }
 }

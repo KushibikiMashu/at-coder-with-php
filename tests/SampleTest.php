@@ -1,6 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use AtCoder\Sample;
 
 /**
  * Class SampleTest
@@ -17,7 +18,8 @@ class SampleTest extends TestCase
      */
     public function testA($expected, $a, $b)
     {
-        $result = $this->solveA($a, $b);
+        $sample = new Sample();
+        $result = $sample->solveA($a, $b);
         $this->assertSame($expected, $result);
     }
 
@@ -32,18 +34,6 @@ class SampleTest extends TestCase
     }
 
     /**
-     * 提出するロジック
-     *
-     * @param $a
-     * @param $b
-     * @return int
-     */
-    private function solveA($a, $b)
-    {
-        return strlen($a . $b);
-    }
-
-    /**
      * @group 100B
      * @dataProvider DataB
      *
@@ -53,7 +43,8 @@ class SampleTest extends TestCase
      */
     public function testB($expected, $a, $b)
     {
-        $result = $this->solveB($a, $b);
+        $sample = new Sample();
+        $result = $sample->solveB($a, $b);
         $this->assertSame($expected, $result);
     }
 
@@ -63,17 +54,5 @@ class SampleTest extends TestCase
     public function DataB()
     {
         yield "1" => [14, "at", "coder"];
-    }
-
-    /**
-     * 提出するロジック
-     *
-     * @param $a
-     * @param $b
-     * @return int
-     */
-    private function solveB($a, $b)
-    {
-        return strlen($a . $b) * 2;
     }
 }
