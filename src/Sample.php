@@ -8,27 +8,8 @@ namespace AtCoder;
  */
 class Sample
 {
-    /**
-     * 提出するロジック
-     *
-     * @param $a
-     * @param $b
-     * @return int
-     */
-    public function solveA($a, $b)
-    {
-        return strlen($a . $b);
-    }
-
-    /**
-     * 提出するロジック
-     *
-     * @param $a
-     * @param $b
-     * @return int
-     */
     public function solveB($a, $b)
     {
-        return strlen($a . $b) * 2;
+        return strlen($a . $b);
     }
 }
