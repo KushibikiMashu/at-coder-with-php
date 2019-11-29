@@ -12,7 +12,7 @@ Dockerのイメージをビルドし、コンテナを立ち上げます。コ�
 
 ```shell script
 $ docker build -t atcoder/php:latest .
-$ docker run --rm -v $(pwd)/tests:/home/tests atcoder/php
+$ docker run --rm -v $(pwd):/home atcoder/php
 ```
 
 サンプルテストケースを3件用意しているため、実行結果は下記のようになります。
@@ -30,7 +30,7 @@ OK (3 tests, 3 assertions)
 特定のテストのみを走らせる場合は、`--group=グループ名`をコマンドに追加してください。
 
 ```shell script
-[~/at-coder-with-php] docker run --rm -v $(pwd)/tests:/home/tests atcoder/php --group=100A
+[~/at-coder-with-php] docker run --rm -v $(pwd):/home atcoder/php --group=100A
 PHPUnit 6.5.14 by Sebastian Bergmann and contributors.
 
 ..                                                                  2 / 2 (100%)
