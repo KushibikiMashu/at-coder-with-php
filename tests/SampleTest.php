@@ -8,22 +8,29 @@ use AtCoder\Sample;
  */
 class SampleTest extends TestCase
 {
-    /**
-     * @dataProvider dataProviderB
-     */
-    public function testB($expected, $a, $b)
+    private $sample;
+
+    public function setUp(): void
     {
-        $sample = new Sample();
-        $result = $sample->solveB($a, $b);
+        $this->sample = new Sample();
+    }
+
+    /**
+     * @dataProvider dataProviderA
+     */
+    public function testA(int $expected, string $a, string $b)
+    {
+        $result = $this->sample->solveA($a, $b);
         $this->assertSame($expected, $result);
     }
 
     /**
      * @return Generator
      */
-    public function dataProviderB()
+    public function dataProviderA(): Generator
     {
         // yield "0" => ["出力", "入力1", "入力2"];
         yield "1" => [7, "at", "coder"];
+        yield "2" => [11, "php", "language"];
     }
 }

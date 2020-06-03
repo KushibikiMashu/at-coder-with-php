@@ -8,7 +8,7 @@ namespace AtCoder;
  */
 class Sample
 {
-    public function solveB($a, $b)
+    public function solveA($a, $b): int
     {
         return strlen($a . $b);
     }
