@@ -1,4 +1,4 @@
-FROM php:7.0.15-alpine
+FROM php:7.4.4-alpine3.11
 LABEL maintainer="MashuKushibiki"
 
 RUN set -eux && \
@@ -9,7 +9,8 @@ RUN set -eux && \
     g++ \
     make && \
   apk add --update --no-cache \
-    icu-dev && \
+    icu-dev \
+    oniguruma-dev && \
   pecl install xdebug && \
   apk del .build-dependencies && \
   docker-php-ext-install intl pdo_mysql mbstring bcmath && \
