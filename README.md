@@ -1,5 +1,5 @@
 # 環境構築
-AtCoder用にPHPのバージョンは7.0.15に指定しています。
+AtCoder用にPHPのバージョンは7.4.4に指定しています。
 
 レポジトリをクローンします。
 
@@ -15,27 +15,29 @@ $ docker build -t atcoder/php:latest .
 $ docker run --rm -v $(pwd):/home atcoder/php
 ```
 
-サンプルテストケースを3件用意しているため、実行結果は下記のようになります。
+サンプルテストケースを2件用意しているため、実行結果は下記のようになります。
+
+PHPUnitのバージョンは9系です。
 
 ```
-PHPUnit 6.5.14 by Sebastian Bergmann and contributors.
-
-...                                                                 3 / 3 (100%)
-
-Time: 152 ms, Memory: 4.00MB
-
-OK (3 tests, 3 assertions)
-```
-
-特定のテストのみを走らせる場合は、`--group=グループ名`をコマンドに追加してください。
-
-```shell script
-[~/at-coder-with-php] docker run --rm -v $(pwd):/home atcoder/php --group=100A
-PHPUnit 6.5.14 by Sebastian Bergmann and contributors.
+PHPUnit 9.0.0 by Sebastian Bergmann and contributors.
 
 ..                                                                  2 / 2 (100%)
 
-Time: 94 ms, Memory: 4.00MB
+Time: 00:00.489, Memory: 4.00 MB
+
+OK (2 tests, 2 assertions)
+```
+
+特定のテストのみを走らせる場合は、実行するテストに`@group`アノテーションを付与し、--group=グループ名`をオプションに指定してコマンドを実行してください。
+
+```shell script
+[~/at-coder-with-php] docker run --rm -v $(pwd):/home atcoder/php --group=100A
+PHPUnit 9.0.0 by Sebastian Bergmann and contributors.
+
+..                                                                  2 / 2 (100%)
+
+Time: 00:00.489, Memory: 4.00 MB
 
 OK (2 tests, 2 assertions)
 ```
